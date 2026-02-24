@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            max-width: 750px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #e0e0e0;
+            font-size: 1.4rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            opacity: 0.7;
+        }
+
+        .quote-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 50px 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+
+        .quote-mark {
+            font-size: 6rem;
+            color: #e94560;
+            line-height: 0;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            opacity: 0.5;
+        }
+
+        .theme-badge {
+            display: inline-block;
+            background: #e94560;
+            color: white;
+            font-size: 0.75rem;
+            padding: 4px 14px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        .quote-text {
+            font-size: 1.5rem;
+            color: #f0f0f0;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+
+        .quote-author {
+            font-size: 1rem;
+            color: #e94560;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .quote-author::before { content: "— "; }
+
+        .btn {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 14px 40px;
+            background: #e94560;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn:hover {
+            background: #c73652;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(233, 69, 96, 0.4);
+        }
+
+        .footer {
+            margin-top: 30px;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✨ Random Quote Generator</h1>
+
+        <div class="quote-card">
+            <div class="quote-mark">"</div>
+            <span class="theme-badge">{{ quote.theme }}</span>
+            <p class="quote-text">{{ quote.text }}</p>
+            <p class="quote-author">{{ quote.author }}</p>
+        </div>
+
+        <a href="/" class="btn">New Quote 🔄</a>
+
+        <p class="footer">Click the button or refresh for a new quote</p>
+    </div>
+</body>
+</html>
