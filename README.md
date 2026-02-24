@@ -1,22 +1,48 @@
-# 🌟 Random Quote Generator
+# Random Quote Generator
 
-A simple Python Flask web application that displays random quotes from various themes including Motivational, Programming, Life, Funny, and Success.
+A lightweight web application built with Python and Flask that displays random inspirational and entertaining quotes from multiple themes. Each page refresh delivers a new quote drawn from a curated collection spanning five categories.
 
-## 🚀 Features
+---
 
-- Displays a random quote on every page load
-- Quotes from 5 different themes
-- Clean, modern dark UI
-- REST API endpoint for quotes (`/api/quote`)
+## Features
 
-## 🛠️ Tech Stack
+- Random quote displayed on every page load
+- Quotes from five themes: Motivational, Programming, Life, Funny, and Success
+- Clean and modern dark-themed user interface
+- REST API endpoint available at `/api/quote`
+- Fully containerized with Docker
 
-- **Backend:** Python, Flask
-- **Frontend:** HTML, CSS
+---
+
+## Tech Stack
+
+- **Language:** Python 3.11
+- **Framework:** Flask
 - **Containerization:** Docker
-- **CI/CD:** Jenkins
+- **CI/CD:** Jenkins, GitHub Actions
 
-## 📦 Run Locally
+---
+
+## Project Structure
+
+```
+random-quote-app/
+├── .github/
+│   └── workflows/
+│       └── docker-pipeline.yml
+├── templates/
+│   └── index.html
+├── app.py
+├── Dockerfile
+├── Jenkinsfile
+├── requirements.txt
+├── .gitignore
+└── README.md
+```
+
+---
+
+## Run Locally
 
 ```bash
 # Clone the repository
@@ -26,54 +52,67 @@ cd random-quote-app
 # Install dependencies
 pip install -r requirements.txt
 
-# Run the app
+# Run the application
 python app.py
 ```
 
-Visit `http://localhost:5000` in your browser.
+Open your browser and visit `http://localhost:5000`
 
-## 🐳 Run with Docker
+---
+
+## Run with Docker
 
 ```bash
-# Build the image
+# Build the Docker image
 docker build -t random-quote-app .
 
 # Run the container
 docker run -p 5000:5000 random-quote-app
 ```
 
-Visit `http://localhost:5000` in your browser.
+Open your browser and visit `http://localhost:5000`
 
-## 🔁 CI/CD Pipeline (Jenkins)
+---
+
+## Pull from Docker Hub
+
+```bash
+docker pull yugan2125/random-quote-app:latest
+docker run -p 5000:5000 yugan2125/random-quote-app:latest
+```
+
+---
+
+## CI/CD Pipeline
+
+### GitHub Actions
+
+The workflow file at `.github/workflows/docker-pipeline.yml` automatically triggers on every push to the `main` branch and runs the following stages:
+
+1. **Clone** - Checks out the source code
+2. **Install Dependencies** - Installs Python packages
+3. **Build** - Builds the Docker image
+4. **Push** - Pushes the image to Docker Hub
+
+To use GitHub Actions, add the following secrets in your repository settings under Settings > Secrets and variables > Actions:
+
+| Secret Name | Description |
+|---|---|
+| DOCKER_USERNAME | Your Docker Hub username |
+| DOCKER_PASSWORD | Your Docker Hub password |
+
+### Jenkins
 
 The `Jenkinsfile` defines a 3-stage pipeline:
 
-1. **Clone** — Checks out the source code from GitHub
-2. **Build** — Builds the Docker image
-3. **Push** — Pushes the image to Docker Hub
+1. **Clone** - Checks out the repository
+2. **Build** - Builds the Docker image
+3. **Push** - Pushes the image to Docker Hub
 
-### Jenkins Setup
+Add a Jenkins credential with ID `dockerhub-credentials` containing your Docker Hub username and password, then update the `DOCKER_IMAGE` variable in the Jenkinsfile with your Docker Hub username.
 
-1. Create a Jenkins credential with ID `dockerhub-credentials` (username + password)
-2. Update `DOCKER_IMAGE` in the `Jenkinsfile` with your Docker Hub username
-3. Create a Pipeline job pointing to this repository
+---
 
-## 📁 Project Structure
+## Author
 
-random-quote-app/
-├── .github/
-│   └── workflows/
-│       └── docker-pipeline.yml  
-├── templates/
-│   └── index.html
-├── app.py
-├── Dockerfile
-├── Jenkinsfile
-├── requirements.txt
-├── .gitignore
-└── README.md
-
-## 👤 Author
-
-## 👤 Author
-J Yugandhara — [GitHub](https://github.com/JYugandhara)
+J Yugandhara - [GitHub](https://github.com/JYugandhara)
