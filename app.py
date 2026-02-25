@@ -38,6 +38,18 @@ quotes = [
     {"text": "I find that the harder I work, the more luck I seem to have.", "author": "Thomas Jefferson", "theme": "Success"},
     {"text": "Opportunities don't happen. You create them.", "author": "Chris Grosser", "theme": "Success"},
     {"text": "Dream big and dare to fail.", "author": "Norman Vaughan", "theme": "Success"},
+
+    # Nature
+    {"text": "Look deep into nature, and then you will understand everything better.", "author": "Albert Einstein", "theme": "Nature"},
+    {"text": "In every walk with nature, one receives far more than he seeks.", "author": "John Muir", "theme": "Nature"},
+
+    # Leadership
+    {"text": "A leader is one who knows the way, goes the way, and shows the way.", "author": "John C. Maxwell", "theme": "Leadership"},
+    {"text": "The greatest leader is not necessarily the one who does the greatest things.", "author": "Ronald Reagan", "theme": "Leadership"},
+
+    # Wisdom
+    {"text": "The only true wisdom is in knowing you know nothing.", "author": "Socrates", "theme": "Wisdom"},
+    {"text": "Turn your wounds into wisdom.", "author": "Oprah Winfrey", "theme": "Wisdom"},
 ]
 
 @app.route("/")
