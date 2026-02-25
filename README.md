@@ -113,6 +113,15 @@ Add a Jenkins credential with ID `dockerhub-credentials` containing your Docker 
 
 ---
 
-## Author
+---
 
+## About This Project
+
+This project was developed as part of a DevOps assignment to demonstrate 
+CI/CD pipeline implementation using GitHub, Docker, and Jenkins.
+
+---
+
+## Author
 J Yugandhara - [GitHub](https://github.com/JYugandhara)
+
