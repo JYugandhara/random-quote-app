@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = "yugan2125/random-quote-app"
-        DOCKER_TAG   = "latest"
+        DOCKER_TAG   = "v1.0"
     }
 
     stages {
