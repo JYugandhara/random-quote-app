@@ -4,6 +4,18 @@ A lightweight web application built with Python and Flask that displays random i
 
 ---
 
+## User Stories
+
+- As a user, I want to visit the web application and see a random quote instantly.
+- As a user, I want quotes from different themes so that I get variety every time.
+- As a user, I want a button to get a new quote without refreshing the page manually.
+- As a user, I want to see the author name along with the quote so I know who said it.
+- As a user, I want the application to be accessible from any device with a browser.
+- As a developer, I want the application to be containerized so it can run on any system.
+- As a developer, I want an automated CI/CD pipeline so the Docker image is built and pushed automatically on every code change.
+
+---
+
 ## Features
 
 - Random quote displayed on every page load
@@ -110,8 +122,6 @@ The `Jenkinsfile` defines a 3-stage pipeline:
 3. **Push** - Pushes the image to Docker Hub
 
 Add a Jenkins credential with ID `dockerhub-credentials` containing your Docker Hub username and password, then update the `DOCKER_IMAGE` variable in the Jenkinsfile with your Docker Hub username.
-
----
 
 ---
 
